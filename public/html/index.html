@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="countriesApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"></script>
+</head>
+<body ng-controller="countriesController">
+<button ng-click="load()">Load Countries</button>
+
+<input type="text" placeholder="search by country" ng-model="whichCountry">
+<button ng-click="search()">Search</button>
+
+<div ng-repeat="country in countriesArray">
+    <div ng-click="beenThere(country.name)">
+        <span ng-show="country.been">Can't see this</span>{{country.name}}
+    </div>
+</div>
+
+<script src="/js/main.js"></script>
+</body>
+</html>
